@@ -2,16 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.messages-list {
-  margin-top: 30px;
-  border: 1px solid #456789;
+ul{
+  text-decoration: none;
+  list-style: none;
 }
 
+.messages-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 25px;
+}
+
+
 .message-sent {
+  position: relative;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  margin: 5px 20px;
+  padding: 10px;
   float: right;
 }
 
+
 .message-received {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+  margin: 5px 20px;
+  padding: 10px;
   float: left;
 }
