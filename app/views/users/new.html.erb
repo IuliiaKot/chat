@@ -1,0 +1,19 @@
+<div class="conatanier">
+  <div class="errors">
+    <% if @errors %>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <%= form_with model: @user, local: true do |form| %>
+    <%= form.label :username %>
+    <%= form.text_field :username, id: "user_username" %>
+    <%= form.label :password %>
+    <%= form.password_field :password, id: "user_password" %>
+
+    <%= form.submit %>
+  <% end %>
+</div>
