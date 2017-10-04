@@ -1,0 +1,2 @@
+let conversations = $('#conversations-list');
+conversations.html("<%= j(render 'conversations/conversation', conversation: @conversation, messages: @conversation.messages, user: current_user) %>");

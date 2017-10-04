@@ -10,9 +10,9 @@ $(document).ready(function(){
     $.ajax({
       method: 'post',
       url: '/conversations',
-      data: {sender_id: sender_id, recipient_id: recipient_id}
+      data: {conversation: {sender_id: sender_id, recipient_id: recipient_id}}
     }).done(function(res){
-      
+
     })
   })
 })
