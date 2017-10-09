@@ -6,14 +6,15 @@ module ApplicationCable
       self.current_user = find_verified_user
     end
     #
-    # protected
-    # def find_verified_user
-    #   debugger
-    #   if (current_user = env['warden'].user)
-    #     current_user
-    #   else
-    #     reject_unauthorized_connection
-    #   end
-    # end
+    protected
+    def find_verified_user
+      # debugger
+      User.find_by(:id => cookies.signed[:user_id])
+      # if (current_user = env['warden'].user)
+      #   current_user
+      # else
+      #   reject_unauthorized_connection
+      # end
+    end
   end
 end

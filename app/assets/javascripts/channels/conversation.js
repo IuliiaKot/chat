@@ -8,11 +8,15 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   },
 
   received: function(data) {
-    console.log(data['message'])
-    // Called when there's incoming data on the websocket for this channel
+    let conversation = $('#conversations-list')
+    conversation.find('.messages-list').find('ul').append(data['message']);
+
+    let messages_list = conversation.find('.messages-list');
+    // var height = messages_list[0].scrollHeight;
+    // messages_list.scrollTop(height);
   },
 
-  speak: function() {
+  speak: function(message) {
     return this.perform('speak', {
       message: message
     });
