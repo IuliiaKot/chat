@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <ul>
+        <li><a href="/session/logout">log out</a></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><a href="/session/new">Login</a></li>
+        <li><a href="/users/new">Sighn up</a></li>
+      </ul>
+    <% end %>
     <div class="main clearfix">
       <%= yield %>
     </div>

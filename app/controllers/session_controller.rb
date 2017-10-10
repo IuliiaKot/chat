@@ -9,7 +9,7 @@ class SessionController < ApplicationController
       cookies.signed[:user_id] = @user.id
       redirect_to '/'
     else
-      @errors = ['Invalid']
+      @errors = ['Invalid username/password']
       render 'new'
     end
   end

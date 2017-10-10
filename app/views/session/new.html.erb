@@ -8,12 +8,14 @@
       </ul>
     <% end %>
   </div>
-  <%= form_with url: session_index_path, local: true do |form| %>
-    <%= form.label :username %>
-    <%= form.text_field :username, id: "user_username" %>
-    <%= form.label :password %>
-    <%= form.password_field :password, id: "user_password" %>
+  <div class="user-form">
+    <%= form_with url: session_index_path, local: true do |form| %>
+      <%= form.label :username %>
+      <%= form.text_field :username, id: "user_username" %>
+      <%= form.label :password %>
+      <%= form.password_field :password, id: "user_password" %>
 
-    <%= form.submit %>
-  <% end %>
+      <%= form.submit 'Login' %>
+    <% end %>
+  </div>
 </div>

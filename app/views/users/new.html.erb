@@ -1,4 +1,4 @@
-<div class="conatanier">
+<div class="contanier">
   <div class="errors">
     <% if @errors %>
       <ul>
@@ -8,12 +8,14 @@
       </ul>
     <% end %>
   </div>
-  <%= form_with model: @user, local: true do |form| %>
-    <%= form.label :username %>
-    <%= form.text_field :username, id: "user_username" %>
-    <%= form.label :password %>
-    <%= form.password_field :password, id: "user_password" %>
+  <div class="user-form">
+    <%= form_with model: @user, local: true do |form| %>
+      <%= form.label :username %>
+      <%= form.text_field :username, id: "user_username" %>
+      <%= form.label :password %>
+      <%= form.password_field :password, id: "user_password" %>
 
-    <%= form.submit %>
-  <% end %>
+      <%= form.submit %>
+    <% end %>
+  </div>
 </div>

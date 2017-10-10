@@ -1,3 +1,48 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.errors {
+  color: #fff;
+  font-size: 14px;
+}
+
+
+
+.user-form {
+  height: 40%;
+  padding-top: 240px;
+  padding-left: 60px;
+  input[type="text"], input[type="password"] {
+    margin-right: 20px;
+    margin-left: 10px;
+    height: 25px;
+    width: 150px;
+    font-size: 14px;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    padding: 3px;
+
+  }
+  label {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  input[type="submit"] {
+    // float: right;
+    color: #94C2ED;
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: darken(#454853, 10%);
+
+    &:hover {
+      color: darken(#94C2ED, 7%);
+    }
+  }
+}

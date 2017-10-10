@@ -26,6 +26,19 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
 $(document).on('submit', '.new_message', function(e) {
   e.preventDefault();
   let values = $(this).serializeArray();
-  App.conversation.speak(values);
-  $(this).trigger('reset');
+  if (values[2].value != "") {
+    App.conversation.speak(values);
+    $(this).trigger('reset');
+  }
+});
+
+$(document).on('keypress', '.new_message', function(e) {
+  if (e.which == 13) {
+      e.preventDefault();
+    let values = $(this).serializeArray();
+    if (values[2].value != "") {
+      App.conversation.speak(values);
+      $(this).trigger('reset');
+    }
+  }
 });
