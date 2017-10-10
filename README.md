@@ -1,24 +1,12 @@
-# README
+To run app:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. in terminal type `git clone https://github.com/IuliiaKot/chat.git`
+2. `cd chat`
+3. `bundle install`
+4. `rake db:drop && rake db:create && rake db:migrate && rake db:seed`
+5. `rails s`
 
-Things you may want to cover:
+Open two tabs in browser, make sure that second one is `incognito`. There are users already exist:
+user: `username: debbie, password: 123456`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+user: `username: pan, password: 123456`
