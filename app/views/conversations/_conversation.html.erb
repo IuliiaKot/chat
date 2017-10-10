@@ -1,19 +1,27 @@
-<div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
-    <div class="panel-body">
-      <div class="messages-list">
-        <ul>
-          <% messages.each do |message| %>
-            <%= render message, user: user%>
-          <% end %>
-        </ul>
+<div class="chat-header clearfix">
 
-          <form class="new_message">
-            <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
-            <input name="user_id" type="hidden" value="<%= user.id %>">
-            <textarea name="body" class="form-control"></textarea>
-            <input type="submit" class="btn btn-success" value="Send">
-          </form>
-      </div>
-    </div>
+  <div class="chat-about">
+    <div class="chat-with">Chat with <%= conversation.recipient.username%></div>
   </div>
-</li>
+</div>
+
+<div class="messages-list" data-conversation-id="<%= conversation.id %>">
+  <ul>
+    <% messages.each do |message| %>
+      <%= render message, user: user%>
+    <% end %>
+  </ul>
+
+</div>
+
+
+<div class="chat-message clearfix">
+
+  <form class="new_message">
+      <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
+      <input name="user_id" type="hidden" value="<%= user.id %>">
+      <textarea name="body" class="message-to-send" id="message-to-send"></textarea>
+      <input type="submit" class="button" value="Send">
+  </form>
+
+</div>

@@ -9,7 +9,8 @@ module ApplicationCable
     protected
     def find_verified_user
       # debugger
-      User.find_by(:id => cookies.signed[:user_id])
+      User.find_by(:id => cookies.signed[:user_id]) || reject_unauthorized_connection
+
       # if (current_user = env['warden'].user)
       #   current_user
       # else

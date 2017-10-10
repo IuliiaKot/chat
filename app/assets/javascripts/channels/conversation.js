@@ -1,22 +1,23 @@
 App.conversation = App.cable.subscriptions.create("ConversationChannel", {
-  connected: function() {
+  connected: function () {
     // Called when the subscription is ready for use on the server
   },
 
-  disconnected: function() {
+  disconnected: function () {
     // Called when the subscription has been terminated by the server
   },
 
-  received: function(data) {
-    let conversation = $('#conversations-list')
+  received: function (data) {
+    let conversation = $('#chat-history')
     conversation.find('.messages-list').find('ul').append(data['message']);
 
-    let messages_list = conversation.find('.messages-list');
-    // var height = messages_list[0].scrollHeight;
-    // messages_list.scrollTop(height);
+    let messagesList = conversation.find('.messages-list');
+    let height = messagesList[0].scrollHeight;
+    messagesList[0].scrollTop =  height;
+    // window.scrollBy(0, 1000)
   },
 
-  speak: function(message) {
+  speak: function (message) {
     return this.perform('speak', {
       message: message
     });
@@ -25,7 +26,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
 
 $(document).on('submit', '.new_message', function(e) {
   e.preventDefault();
-  var values = $(this).serializeArray();
+  let values = $(this).serializeArray();
   App.conversation.speak(values);
   $(this).trigger('reset');
 });

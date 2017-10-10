@@ -14,5 +14,17 @@ module ChatRoom
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
+    # end
+    Warden::Manager.serialize_into_session do |user|
+      user.id
+    end
+
+    Warden::Manager.serialize_from_session do |id|
+      User.find_by_id(id)
+    end
+
+    config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
+    end
   end
 end

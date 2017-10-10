@@ -13,7 +13,7 @@ class MessageBroadcastJob < ApplicationJob
 
   def broadcast_to_sender(user, message)
     ActionCable.server.broadcast(
-      "conversations-",
+      "conversations-#{user.id}",
       message: render_message(message, user),
       conversation_id: message.conversation_id
     )
@@ -21,7 +21,7 @@ class MessageBroadcastJob < ApplicationJob
 
   def broadcast_to_recipient(user, message)
     ActionCable.server.broadcast(
-      "conversations-",
+      "conversations-#{user.id}",
       message: render_message(message, user),
       conversation_id: message.conversation_id
     )
