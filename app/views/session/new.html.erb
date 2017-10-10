@@ -9,6 +9,7 @@
     <% end %>
   </div>
   <div class="user-form">
+      <h4 >Log in</h4>
     <%= form_with url: session_index_path, local: true do |form| %>
       <%= form.label :username %>
       <%= form.text_field :username, id: "user_username" %>

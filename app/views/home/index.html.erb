@@ -8,7 +8,7 @@
       <% @users.each do |user| %>
         <li class="clearfix">
           <div class="about">
-            <div class="name"><%= link_to user.username %>
+            <div class="name"><%= link_to user.username %> 
               <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
                  "data-sid" => current_user.id, "data-rip" => user.id %>
             </div>

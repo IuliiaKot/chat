@@ -17,9 +17,9 @@ App.apperance = App.cable.subscriptions.create("ApperanceChannel", {
       if (user.id != currentUser){
         let link = "<a class='btn btn-success btn-xs start-conversation' href='#' data-sid=" + currentUser + " data-rip=" + user.id + ">Send Message</a>";
         let elm = "<li class='clearfix'><div class='about'>" +
-            "<div class='name'><a href='/'>" + user.username + "</a>" +
+            "<div class='name'><a href='/'>" + user.username + "</a> " +
               link +
-            "</div><div class='status'>"+
+            "</div><div class='status'> " +
               (user.online ? "<i class='fa fa-circle online'></i> online" : "<i class='fa fa-circle offline'></i> offline")+
             "</div></div></li>"
         res.push(elm);
