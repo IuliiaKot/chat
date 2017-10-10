@@ -8,13 +8,12 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   },
 
   received: function (data) {
-    let conversation = $('#chat-history')
+    let conversation = $('#chat-history');
     conversation.find('.messages-list').find('ul').append(data['message']);
 
     let messagesList = conversation.find('.messages-list');
     let height = messagesList[0].scrollHeight;
     messagesList[0].scrollTop =  height;
-    // window.scrollBy(0, 1000)
   },
 
   speak: function (message) {
