@@ -1,7 +1,10 @@
-<li>
-  <div class="row">
-    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
-      <%= message.body %>
-    </div>
+
+<li class="clearfix">
+  <div class="message-data <%= user.id == message.user_id ? 'align-right' : '' %>">
+      <span class="message-data-time" ><%= message.created_at.to_date %></span> &nbsp; &nbsp;
+      <span class="message-data-name" ><%= message.user.username %> </span>
+  </div>
+  <div class="message <%= user.id == message.user_id ? 'other-message float-right' : 'my-message' %>">
+    <%= message.body %>
   </div>
 </li>

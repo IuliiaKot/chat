@@ -1,2 +1,2 @@
-let conversations = $('#conversations-list');
+let conversations = $('#chat-history');
 conversations.html("<%= j(render 'conversations/conversation', conversation: @conversation, messages: @conversation.messages, user: current_user) %>");
