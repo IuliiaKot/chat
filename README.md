@@ -7,6 +7,7 @@ To run app:
 5. `rails s`
 
 Open two tabs in browser, make sure that second one is `incognito`. There are users already exist:
+
 user: `username: debbie, password: 123456`
 
 user: `username: pan, password: 123456`
