@@ -6,9 +6,7 @@ ul{
   text-decoration: none;
   list-style: none;
 }
-$green: #86BB71;
-$blue: #94C2ED;
-$orange: #E38968;
+
 $gray: #92959E;
 
 
@@ -30,24 +28,18 @@ body {
   width:260px;
   float: left;
 
-  .search {
+  .user-list {
+    overflow: scroll;
+    height: 480px;
+  }
+
+  .title {
     padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid black;
   }
 
-  input {
-    border-radius: 3px;
-    border: none;
-    padding: 14px;
-    color: white;
-    background: #6A6C75;
-    width: 90%;
-    font-size: 14px;
-  }
-
-  .fa-search {
-    position: relative;
-    left: -25px;
-  }
 
   ul {
     padding: 20px;
@@ -146,21 +138,21 @@ body {
         width: 0;
         position: absolute;
         pointer-events: none;
-        border-bottom-color: $green;
+        border-bottom-color: #86BB71;
         border-width: 10px;
         margin-left: -10px;
       }
     }
 
     .my-message {
-      background: $green;
+      background: #86BB71;
     }
 
     .other-message {
-      background: $blue;
+      background: #94C2ED;
 
       &:after {
-        border-bottom-color: $blue;
+        border-bottom-color: #94C2ED;
         left: 93%;
       }
     }
@@ -190,7 +182,7 @@ body {
 
     .button {
       float: right;
-      color: $blue;
+      color: #94C2ED;
       font-size: 16px;
       // text-transform: uppercase;
       border: none;
@@ -199,7 +191,7 @@ body {
       background: #F2F5F8;
 
       &:hover {
-        color: darken($blue, 7%);
+        color: darken(#94C2ED, 7%);
       }
     }
   }
@@ -211,16 +203,16 @@ body {
   }
 
 .online {
-  color: $green;
+  color: #86BB71;
 }
 
 .offline {
-  color: $orange;
+  color: #E38968;
 }
 
 
 .message-sent {
-  color: $blue;
+  color: #94C2ED;
 }
 
 .align-left {

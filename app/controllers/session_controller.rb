@@ -15,6 +15,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    current_user.is_offline
     session.destroy
     redirect_to root_path
   end

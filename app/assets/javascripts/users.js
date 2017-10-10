@@ -2,9 +2,8 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
 
-  $('.start-conversation').on('click', function(e){
+  $('.list').on('click', '.start-conversation', function(e){
     e.preventDefault();
-
     let sender_id = $(this).data('sid');
     let recipient_id = $(this).data('rip');
     $.ajax({

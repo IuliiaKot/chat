@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004145410) do
+ActiveRecord::Schema.define(version: 20171010050507) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "recipient_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171004145410) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "online", default: false
   end
 
 end
